@@ -1,0 +1,83 @@
+<%- include('../partials/header') %>
+
+  <div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+      <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+          <h4 class="page-title">Sub Category</h4>
+          <div class="ms-auto text-end">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Category</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  View Sub Category
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+      <!-- ============================================================== -->
+      <!-- Start Page Content -->
+      <!-- ============================================================== -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title mb-0">Sub Category Details</h5>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Image</th>
+                  <th scope="col">Sub Category Title</th>
+                  <th scope="col">Delete</th>
+                  <th scope="col">Update</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% Category.map((value,index)=>{
+                  let {subCategoryTitle,image,id}=value %>
+
+                  <tr>
+                    <td>
+                      <img src="/<%= image %>" alt="<%= subCategoryTitle %>" height="100px" width="100px" />
+                    </td>
+                    <td>
+                      <%= subCategoryTitle %>
+                    </td>
+                    <td><a href="/Category/deleteSubCategory/<%= id %>">Delete</a></td>
+                    <td><a href="/Category/editSubCategory/<%= id %>">Edit</a></td>
+
+                  </tr>
+
+                  <% }) %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End PAge Content -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Right sidebar -->
+      <!-- ============================================================== -->
+      <!-- .right-sidebar -->
+      <!-- ============================================================== -->
+      <!-- End Right sidebar -->
+      <!-- ============================================================== -->
+    </div>
+
+  <%- include('../partials/footer') %>

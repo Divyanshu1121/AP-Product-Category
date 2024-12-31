@@ -1,0 +1,115 @@
+<%- include('../partials/header') %>
+
+<div class="page-wrapper">
+  <!-- ============================================================== -->
+  <!-- Bread crumb and right sidebar toggle -->
+  <!-- ============================================================== -->
+  <div class="page-breadcrumb">
+    <div class="row">
+      <div class="col-12 d-flex no-block align-items-center">
+        <h4 class="page-title">Category Details</h4>
+        <div class="ms-auto text-end">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Category</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Add Sub Categories
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Bread crumb and right sidebar toggle -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Container fluid  -->
+  <!-- ============================================================== -->
+  <div class="container-fluid">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <form
+            class="form-horizontal"
+            method="post"
+            action=""
+            enctype="multipart/form-data"
+          >
+            <div class="card-body">
+              <h4 class="card-title">Add Sub Category Info</h4>
+              <div class="form-group row">
+                <label
+                  class="col-sm-3 text-end control-label col-form-label"
+                  >Category</label
+                >
+                <div class="col-sm-9">
+                  <select class="form-control" name="categoryId">
+                    <option value="" disabled selected>--select category--</option>
+                    <% Category.map((value)=>{ %>
+                        <option value="<%= value.id %>"><%= value.categoryTitle %></option>
+                    <% }) %>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label
+                  for="categoryTitle"
+                  class="col-sm-3 text-end control-label col-form-label"
+                  >Sub Category Title</label
+                >
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="categoryTitle"
+                    name="subCategoryTitle"
+                    placeholder="Sub-Category Title"
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label
+                  for="image"
+                  class="col-sm-3 text-end control-label col-form-label"
+                  >Sub Category Image</label
+                >
+                <div class="col-sm-9">
+                  <input
+                    type="file"
+                    class="custom-file-input"
+                    id="image"
+                    name="image"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="border-top">
+              <div class="card-body ms-auto">
+                <button type="submit" class="btn btn-primary text-center">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End PAge Content -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Right sidebar -->
+      <!-- ============================================================== -->
+      <!-- .right-sidebar -->
+      <!-- ============================================================== -->
+      <!-- End Right sidebar -->
+      <!-- ============================================================== -->
+    </div>
+  </div>
+
+  <%- include('../partials/footer') %>
+
